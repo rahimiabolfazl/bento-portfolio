@@ -5,7 +5,10 @@
     --card-radius : 1.5rem;
 
     --text : #fff;
-    --text-muted : #BCBCBC;
+    --text-muted : #bcbcbca3;
+
+    --text-overline-size: 0.75rem;
+    --text-subtitle-size: .875rem;
 
 }
 
@@ -18,6 +21,47 @@
 .container {
     width: 70%;
     margin: 0 auto;
+}
+
+.cards {
+    background: var(--card-bg);
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: var(--card-radius);
+}
+
+.text-overline {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: var(--text-overline-size);
+}
+
+.text-subtitle {
+    color: var(--text-muted);
+    font-size: var(--text-subtitle-size);
+}
+
+
+.card-btn {
+    transform: rotate(180deg);
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    opacity: 0.1;
+    transition-duration: 0.3s;
+    z-index: 3;
+}
+
+.card-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+}
+
+.cards:hover .card-btn {
+    opacity: 0.8;
 }
 
 body {
@@ -73,15 +117,79 @@ nav a:hover {
 /* end header  */
 
 /* start main  */
-.profile-card {
-    background: var(--card-bg);
+.cards-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "profile-card    profile-card    more-about-card    projects-card"
+    "blog-card       services-card   services-card      socials-card" 
+    "statistics-card statistics-card work-together-card work-together-card"
+    ;
+    gap: 15px;
+}
 
-    width: 500px;
-    border-radius: var(--card-radius);
+.profile-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px;
+    padding: 30px;
     gap: 20px;
+    grid-area: profile-card;
 }
+
+.profile-card-img {
+    width:40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card-img img {
+    width: 100%;
+    border-radius: 0 var(--card-radius) 0 var(--card-radius);
+}
+
+.profile-card-content {
+    width: 60%;
+}
+
+
+.profile-card-content h1 a{
+    color: var(--text);
+    font-size: 2.25rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.more-about-card {
+    grid-area: more-about-card;
+}
+
+.projects-card {
+    grid-area: projects-card;
+}
+
+.blog-card {
+    grid-area: blog-card;
+}
+
+.services-card {
+    grid-area: services-card;
+}
+
+.socials-card {
+    grid-area: socials-card;
+}
+
+.statistics-card {
+    grid-area: statistics-card;
+}
+
+.work-together-card {
+    grid-area: work-together-card;
+}
+
 /* end main  */
