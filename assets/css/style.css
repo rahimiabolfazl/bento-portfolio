@@ -1,0 +1,87 @@
+:root {
+    --page-bg : linear-gradient(46deg,rgba(33, 33, 33, 1) 0%, rgba(14, 14, 14, 1) 100%);
+
+    --card-bg : linear-gradient(90deg,rgba(33, 33, 33, 1) 0%, rgba(19, 19, 19, 1) 50%);
+    --card-radius : 1.5rem;
+
+    --text : #fff;
+    --text-muted : #BCBCBC;
+
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+body {
+    min-height: 100vh;
+    font-family: vazirmatn;
+
+    background: var(--page-bg);
+}
+
+
+/* start header  */
+.header-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+
+.logo img {
+    width: 120px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    opacity: 0.8;
+    transition-duration: 0.3s;
+}
+
+nav a:hover {
+    color: var(--text);
+    opacity: 1;
+}
+
+.btn-talk {
+    text-decoration: none;
+    color: var(--text);
+    background-color: #323232;
+    padding: 8px 20px;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    transition-duration: 0.3s;
+}
+
+.btn-talk:hover{
+    color: #000;
+    background-color: #fff;
+}
+/* end header  */
+
+/* start main  */
+.profile-card {
+    background: var(--card-bg);
+
+    width: 500px;
+    border-radius: var(--card-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+}
+/* end main  */
